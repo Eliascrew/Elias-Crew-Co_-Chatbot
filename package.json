@@ -1,0 +1,9 @@
+{
+  "name": "elias-crew-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elias Crew Co. website + Messenger chatbot backend",
+  "dependencies": {
+    "@netlify/blobs": ">=7.0.0"
+  }
+}
