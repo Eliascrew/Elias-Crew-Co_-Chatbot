@@ -160,7 +160,9 @@
       const reply = (data.reply || "").trim() || "Sorry, I hit a snag. You can reach Daniel at 214-836-1418.";
       history.push({ role: "assistant", content: reply });
       hideTyping(); botSay(reply);
-      if (data.leadCaptured && data.lead && !leadHandled && !booked) { currentLead = data.lead; leadHandled = true; offerSlots(); }
+      // Calendar booking is off for now — just mark the lead handled (the bot's
+      // own reply confirms the callback). Re-enable offerSlots() to turn booking back on.
+      if (data.leadCaptured && data.lead && !leadHandled && !booked) { currentLead = data.lead; leadHandled = true; }
     } catch (e) {
       hideTyping();
       botSay("I'm having trouble connecting — please call or text Daniel at **214-836-1418** and he'll take great care of you.");
