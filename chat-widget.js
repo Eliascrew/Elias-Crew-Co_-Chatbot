@@ -114,7 +114,7 @@
   const $ = (id) => root.getElementById(id);
   const msgs = $("msgs"), input = $("input"), chips = $("chips");
   const history = [];
-  let busy = false, currentLead = null, booked = false;
+  let busy = false, currentLead = null, booked = false, leadHandled = false;
 
   const botAv = '<div class="av"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5M5 10v9h14v-9M9.5 19v-5h5v5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
   const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
@@ -155,12 +155,12 @@
     meSay(text); history.push({ role: "user", content: text }); chips.innerHTML = "";
     busy = true; $("send").disabled = true; showTyping();
     try {
-      const res = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: history }) });
+      const res = await fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: history, leadCaptured: leadHandled }) });
       const data = await res.json();
       const reply = (data.reply || "").trim() || "Sorry, I hit a snag. You can reach Daniel at 214-836-1418.";
       history.push({ role: "assistant", content: reply });
       hideTyping(); botSay(reply);
-      if (data.leadCaptured && data.lead && !booked) { currentLead = data.lead; offerSlots(); }
+      if (data.leadCaptured && data.lead && !leadHandled && !booked) { currentLead = data.lead; leadHandled = true; offerSlots(); }
     } catch (e) {
       hideTyping();
       botSay("I'm having trouble connecting — please call or text Daniel at **214-836-1418** and he'll take great care of you.");
