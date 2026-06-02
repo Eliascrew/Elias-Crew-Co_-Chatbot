@@ -35,7 +35,7 @@
     --shadow:0 24px 60px -18px rgba(36,28,22,.35);--shadow-sm:0 8px 24px -10px rgba(36,28,22,.28);
   }
   .launcher{position:fixed;right:24px;bottom:24px;z-index:2147483000;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-  .nudge{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:16px 16px 4px 16px;padding:13px 16px;max-width:255px;font-size:14px;color:var(--ink);line-height:1.4;font-weight:500;cursor:pointer;animation:pop .5s .9s both}
+  .nudge{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:16px 16px 4px 16px;padding:13px 16px;max-width:255px;font-size:14px;color:var(--ink);line-height:1.4;font-weight:500;cursor:pointer;animation:pop .5s 3.5s both,wiggle 2.6s 4.4s 2}
   .nudge b{font-weight:700}.nudge .x{float:right;margin-left:10px;color:var(--muted);font-weight:700}
   .fab{width:64px;height:64px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(150deg,var(--amber),var(--amber-deep));box-shadow:0 14px 30px -8px rgba(181,97,43,.6);display:grid;place-items:center;transition:transform .25s cubic-bezier(.34,1.56,.64,1);position:relative}
   .fab:hover{transform:scale(1.07) rotate(-4deg)}.fab svg{width:30px;height:30px}
@@ -81,10 +81,11 @@
   @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   @keyframes blink{0%,60%,100%{opacity:.25}30%{opacity:1}}
   @keyframes ping{0%{box-shadow:0 0 0 0 rgba(90,208,122,.55)}70%{box-shadow:0 0 0 7px rgba(90,208,122,0)}100%{box-shadow:0 0 0 0 rgba(90,208,122,0)}}
+  @keyframes wiggle{0%,100%{transform:none}20%{transform:rotate(-2.5deg) scale(1.03)}40%{transform:rotate(2deg) scale(1.03)}60%{transform:rotate(-1.5deg)}80%{transform:rotate(1deg)}}
 </style>
 
 <div class="launcher" id="launcher">
-  <div class="nudge" id="nudge"><span class="x" id="nudgeX">\u2715</span><b>\uD83D\uDC4B Need a quote?</b><br>Ask me anything — I can book your free consult.</div>
+  <div class="nudge" id="nudge"><span class="x" id="nudgeX">\u2715</span><b>\uD83D\uDC4B Want a free estimate?</b><br>Tell me about your project and I'll get you a quick ballpark.</div>
   <button class="fab" id="fab" aria-label="Open chat"><span class="dot"></span>
     <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.4 9.6 9.6 0 0 1-4-.9L3 20.5l1.5-5a8.4 8.4 0 0 1-.9-4A8.38 8.38 0 0 1 12 3a8.38 8.38 0 0 1 9 8.5Z" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
@@ -141,8 +142,24 @@
   }
   function closeChat() { $("chat").classList.remove("open"); $("scrim").classList.remove("on"); $("launcher").style.display = "flex"; }
 
-  $("fab").onclick = openChat; $("nudge").onclick = openChat; $("close").onclick = closeChat; $("scrim").onclick = closeChat;
-  $("nudgeX").onclick = (e) => { e.stopPropagation(); $("nudge").style.display = "none"; };
+  let userActed = false;
+  $("fab").onclick = () => { userActed = true; openChat(); };
+  $("nudge").onclick = () => { userActed = true; openChat(); };
+  $("close").onclick = closeChat; $("scrim").onclick = closeChat;
+  $("nudgeX").onclick = (e) => { e.stopPropagation(); userActed = true; $("nudge").style.display = "none"; };
+
+  // Gently auto-open once per visit for visitors who linger (desktop only — on
+  // mobile the chat fills the screen, so we let the teaser bubble do the work).
+  let autoOpened = false;
+  try { autoOpened = sessionStorage.getItem("ecc_autoopen") === "1"; } catch (e) {}
+  if (!autoOpened && window.innerWidth > 768) {
+    setTimeout(() => {
+      if (userActed) return;
+      if ($("chat").classList.contains("open")) return;
+      try { sessionStorage.setItem("ecc_autoopen", "1"); } catch (e) {}
+      openChat();
+    }, 7000);
+  }
   input.addEventListener("input", () => { input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 96) + "px"; });
   input.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } });
   $("send").onclick = () => send();
