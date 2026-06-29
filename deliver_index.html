@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elias Crew Co. — McKinney's Trusted Contractor</title>
+<meta name="description" content="Elias Crew Co. — McKinney TX contractor specializing in fencing, decks, pergolas, covered patios, kitchen & bathroom remodeling, painting, flooring and general repairs. Free estimates. Call 214-836-1418.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark:    #0d1f0f;
+    --green:   #1a5226;
+    --mid:     #1e8449;
+    --bright:  #27ae60;
+    --gold:    #d4a017;
+    --cream:   #f5f0e8;
+    --light:   #eaf4ec;
+    --white:   #ffffff;
+    --gray:    #6b7280;
+    --text:    #1a1a1a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,31,15,0.96);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 68px;
+    border-bottom: 1px solid rgba(39,174,96,0.2);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--bright); }
+  .nav-cta {
+    background: var(--bright);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: var(--mid); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--dark);
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 100px 5vw 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(26,82,38,0.45) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(39,174,96,0.12) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 680px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(39,174,96,0.15);
+    border: 1px solid rgba(39,174,96,0.35);
+    color: var(--bright);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before { content: '●'; font-size: 0.5rem; }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.08;
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--bright);
+  }
+  .hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 520px;
+    animation: fadeUp 0.6s 0.2s ease both;
+    font-weight: 300;
+  }
+  .hero-buttons {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--bright);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { background: var(--mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(39,174,96,0.3); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent;
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--bright); color: var(--bright); }
+
+  .hero-stats {
+    position: absolute; bottom: 48px; right: 5vw;
+    display: flex; gap: 40px;
+    animation: fadeUp 0.6s 0.5s ease both;
+    z-index: 2;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--bright);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--green);
+    padding: 20px 5vw;
+    display: flex; flex-wrap: wrap; gap: 32px;
+    align-items: center; justify-content: center;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .trust-icon { font-size: 1.1rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: 90px 5vw; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--bright);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ── SERVICES ── */
+  .services { background: var(--cream); }
+  .services-header { text-align: center; margin-bottom: 56px; }
+  .services-header .section-sub { margin: 0 auto; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 32px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green), var(--bright));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    display: block;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.65;
+  }
+  .service-price {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--bright);
+    background: var(--light);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ── OUR WORK / GALLERY ── */
+  .work { background: var(--white); }
+  .work-header { text-align: center; margin-bottom: 48px; }
+  .work-header .section-sub { margin: 0 auto; }
+  .work-filters {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    margin-bottom: 40px;
+  }
+  .work-filter {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--green);
+    background: var(--white);
+    border: 1.5px solid rgba(26,82,38,0.2);
+    padding: 9px 20px; border-radius: 100px;
+    cursor: pointer; transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .work-filter:hover { border-color: var(--bright); }
+  .work-filter.active { background: var(--green); border-color: var(--green); color: var(--white); }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .shot {
+    position: relative; border-radius: 12px; overflow: hidden;
+    cursor: pointer; aspect-ratio: 4 / 3; background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .shot:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .shot:hover img { transform: scale(1.06); }
+  .shot::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(13,31,15,0.55));
+  }
+  .shot-tag {
+    position: absolute; left: 14px; bottom: 14px; z-index: 2;
+    font-size: 0.78rem; font-weight: 600; color: var(--white);
+    background: rgba(26,82,38,0.92);
+    padding: 5px 13px; border-radius: 100px;
+    letter-spacing: 0.02em;
+  }
+  .work-note {
+    text-align: center; color: var(--gray); font-size: 0.9rem;
+    margin-top: 36px; font-weight: 300;
+  }
+  .work-note a { color: var(--bright); font-weight: 600; text-decoration: none; }
+
+  /* lightbox */
+  .lb { position: fixed; inset: 0; z-index: 300; background: rgba(8,12,8,0.94);
+        display: none; align-items: center; justify-content: center; padding: 4vw; }
+  .lb.open { display: flex; }
+  .lb img { max-width: 92vw; max-height: 86vh; border-radius: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+  .lb-btn { position: absolute; border: none; cursor: pointer; color: var(--white);
+            background: rgba(255,255,255,0.12); transition: background 0.2s; }
+  .lb-btn:hover { background: var(--bright); }
+  .lb-close { top: 20px; right: 24px; width: 46px; height: 46px; border-radius: 50%; font-size: 1.5rem; }
+  .lb-arrow { top: 50%; transform: translateY(-50%); width: 54px; height: 54px; border-radius: 50%; font-size: 1.7rem; }
+  .lb-prev { left: 18px; } .lb-next { right: 18px; }
+  .lb-cap { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center;
+            color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+
+  /* ── WHY US ── */
+  .why { background: var(--dark); }
+  .why .section-title { color: var(--white); }
+  .why .section-sub { color: rgba(255,255,255,0.6); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .why-list { list-style: none; display: flex; flex-direction: column; gap: 24px; }
+  .why-item {
+    display: flex; align-items: flex-start; gap: 18px;
+  }
+  .why-check {
+    width: 36px; height: 36px; min-width: 36px;
+    background: rgba(39,174,96,0.15);
+    border: 1px solid rgba(39,174,96,0.3);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bright);
+    font-size: 1rem;
+  }
+  .why-text h4 {
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    font-size: 1rem;
+  }
+  .why-text p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+  .why-cta-box {
+    background: rgba(39,174,96,0.08);
+    border: 1px solid rgba(39,174,96,0.2);
+    border-radius: 16px;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .why-cta-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .why-cta-box p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .phone-big {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--bright);
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.2s;
+  }
+  .phone-big:hover { color: var(--white); }
+
+  /* ── PROCESS ── */
+  .process { background: var(--white); }
+  .process-header { text-align: center; margin-bottom: 56px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 10%; right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), var(--bright), var(--green));
+    opacity: 0.3;
+  }
+  .step { text-align: center; padding: 0 20px; position: relative; }
+  .step-num {
+    width: 56px; height: 56px;
+    background: var(--green);
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    position: relative; z-index: 1;
+    box-shadow: 0 4px 16px rgba(26,82,38,0.3);
+  }
+  .step h4 {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .step p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT FORM ── */
+  .contact { background: var(--light); }
+  .contact-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: start;
+  }
+  .contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .contact-info p {
+    color: var(--gray);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .contact-detail {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 18px;
+  }
+  .contact-detail-icon {
+    width: 42px; height: 42px; min-width: 42px;
+    background: var(--green);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .contact-detail-text a,
+  .contact-detail-text span {
+    display: block;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-detail-text a:hover { color: var(--bright); }
+  .contact-detail-text small {
+    font-size: 0.78rem;
+    color: var(--gray);
+  }
+
+  .form-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .form-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .form-card p {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin-bottom: 28px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { margin-bottom: 16px; }
+  label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--bright);
+    box-shadow: 0 0 0 3px rgba(39,174,96,0.12);
+  }
+  textarea { resize: vertical; min-height: 100px; }
+  .btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--green);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    margin-top: 8px;
+  }
+  .btn-submit:hover { background: var(--mid); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,82,38,0.25); }
+  .form-note {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--gray);
+    margin-top: 12px;
+  }
+  .success-msg {
+    display: none;
+    background: var(--light);
+    border: 1px solid var(--bright);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 16px;
+  }
+
+  /* ── SERVICE AREAS ── */
+  .areas { background: var(--white); padding: 60px 5vw; }
+  .areas-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+  .areas h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+  .areas-list {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  }
+  .area-tag {
+    background: var(--light);
+    color: var(--green);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 8px 18px;
+    border-radius: 100px;
+    border: 1px solid rgba(26,82,38,0.15);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 40px 5vw;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--bright); }
+  footer p {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+    margin-top: 16px;
+  }
+  .footer-links {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    justify-content: center;
+    margin: 16px 0;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--bright); }
+  .footer-social {
+    display: flex; gap: 16px;
+    justify-content: center;
+    margin: 20px 0 4px;
+  }
+  .footer-social a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.7);
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+  }
+  .footer-social a:hover {
+    background: var(--bright);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+  .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+
+  /* ── FLOATING CALL ── */
+  .float-call {
+    position: fixed; bottom: 28px; left: 28px; z-index: 200;
+    display: flex; align-items: center; gap: 12px;
+    background: var(--bright);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(39,174,96,0.4);
+    transition: all 0.2s;
+    animation: pulse 2.5s infinite;
+  }
+  .float-call:hover { background: var(--mid); transform: translateY(-2px); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 8px 32px rgba(39,174,96,0.4); }
+    50%       { box-shadow: 0 8px 48px rgba(39,174,96,0.65); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero-stats { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .steps::before { display: none; }
+    nav { padding: 0 4vw; }
+    .nav-logo { font-size: 1.1rem; }
+    .float-call { padding: 14px 18px; font-size: 0.9rem; bottom: 20px; left: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .shot:hover img { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Elias Crew <span>Co.</span></div>
+  <a href="#contact" class="nav-cta">Free Estimate</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">McKinney, TX — Serving All of DFW</div>
+    <h1>Building Your Home<br><em>The Right Way.</em></h1>
+    <p>From backyard fences and custom decks to full kitchen and bathroom remodels — Elias Crew Co. delivers quality craftsmanship, honest pricing, and a crew you can trust.</p>
+    <div class="hero-buttons">
+      <a href="tel:2148361418" class="btn-primary">📞 Call 214-836-1418</a>
+      <a href="#contact" class="btn-secondary">Get Free Estimate →</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Licensed & Insured</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1yr</div>
+      <div class="stat-label">Workmanship Warranty</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">DFW</div>
+      <div class="stat-label">Local & Family Owned</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✅</span> Licensed & Insured</div>
+  <div class="trust-item"><span class="trust-icon">🏠</span> Family Owned</div>
+  <div class="trust-item"><span class="trust-icon">📋</span> Detailed Written Estimates</div>
+  <div class="trust-item"><span class="trust-icon">⚡</span> Same Week Availability</div>
+  <div class="trust-item"><span class="trust-icon">🛡️</span> 1-Year Warranty</div>
+  <div class="trust-item"><span class="trust-icon">📞</span> Same Day Response</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div class="section-label">What We Build</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">From outdoor living spaces to complete interior remodels — we handle it all with the same attention to detail and commitment to quality.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🪵</span>
+      <h3>Fence Installation</h3>
+      <p>Wood, cedar, metal, and privacy fences installed to your specs. New installations, repairs, and gate builds.</p>
+      <span class="service-price">Starting from $1,500</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏗️</span>
+      <h3>Deck Building</h3>
+      <p>Custom decks built with pressure-treated lumber, cedar, or composite materials. Railings, stairs, and full framing.</p>
+      <span class="service-price">Starting from $3,500</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">☂️</span>
+      <h3>Pergolas & Covered Patios</h3>
+      <p>Freestanding or attached pergolas, covered patios with full roofing, shingles, and structural framing.</p>
+      <span class="service-price">Starting from $4,000</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🍳</span>
+      <h3>Kitchen Remodeling</h3>
+      <p>Complete kitchen renovations — cabinets, countertops, backsplash, plumbing, electrical, and appliances.</p>
+      <span class="service-price">Starting from $8,000</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚿</span>
+      <h3>Bathroom Remodeling</h3>
+      <p>Full bathroom remodels including tile, vanities, showers, tubs, plumbing, and all finish work.</p>
+      <span class="service-price">Starting from $4,500</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎨</span>
+      <h3>Painting & Flooring</h3>
+      <p>Interior and exterior painting, hardwood, LVP, laminate, tile flooring installation and refinishing.</p>
+      <span class="service-price">Starting from $800</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔧</span>
+      <h3>Drywall & Repairs</h3>
+      <p>Drywall hang, tape, bed, texture and finish. General home repairs, doors, windows, and carpentry.</p>
+      <span class="service-price">Free Estimate</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚡</span>
+      <h3>General Repairs</h3>
+      <p>Plumbing repairs, electrical fixes, door and window repairs, trim, and anything else your home needs.</p>
+      <span class="service-price">Free Estimate</span>
+    </div>
+  </div>
+</section>
+
+<!-- OUR WORK / GALLERY -->
+<section class="work" id="work">
+  <div class="work-header">
+    <div class="section-label">Recent Projects</div>
+    <h2 class="section-title">Our Work</h2>
+    <p class="section-sub">Real projects built by our crew across McKinney and the DFW metroplex. Tap any photo to view it larger.</p>
+  </div>
+  <div class="work-filters" id="workFilters">
+    <button class="work-filter active" data-cat="all">All</button>
+    <button class="work-filter" data-cat="Fences">Fences</button>
+    <button class="work-filter" data-cat="Patios">Pergolas &amp; Patios</button>
+    <button class="work-filter" data-cat="Bathrooms">Bathrooms</button>
+    <button class="work-filter" data-cat="Flooring">Flooring</button>
+  </div>
+  <div class="gallery" id="gallery">
+    <figure class="shot" data-cat="Fences"><img loading="lazy" src="images/fence-privacy-dark-stain.jpg" alt="Dark-stained board-on-board privacy fence with gate in McKinney"><span class="shot-tag">Privacy Fence</span></figure>
+    <figure class="shot" data-cat="Fences"><img loading="lazy" src="images/fence-board-on-board.jpg" alt="Natural cedar board-on-board fence with cap rail"><span class="shot-tag">Cedar Fence</span></figure>
+    <figure class="shot" data-cat="Patios"><img loading="lazy" src="images/covered-patio-pergola.jpg" alt="Stained wood covered patio with vaulted ceiling and stone columns"><span class="shot-tag">Covered Patio</span></figure>
+    <figure class="shot" data-cat="Patios"><img loading="lazy" src="images/pergola-pavilion.jpg" alt="Freestanding wood pavilion pergola over a new concrete patio"><span class="shot-tag">Pergola</span></figure>
+    <figure class="shot" data-cat="Bathrooms"><img loading="lazy" src="images/bathroom-soaker-tub.jpg" alt="Modern bathroom remodel with freestanding soaker tub and matte black fixtures"><span class="shot-tag">Bath Remodel</span></figure>
+    <figure class="shot" data-cat="Bathrooms"><img loading="lazy" src="images/bathroom-walk-in-shower.jpg" alt="Frameless glass walk-in shower with hexagon floor tile and bench"><span class="shot-tag">Walk-In Shower</span></figure>
+    <figure class="shot" data-cat="Flooring"><img loading="lazy" src="images/flooring-wood-plank.jpg" alt="Wood-plank flooring installation in a hallway"><span class="shot-tag">Flooring</span></figure>
+  </div>
+  <p class="work-note">📸 New photos added after every project. Want to see work similar to yours? <a href="#contact">Ask Daniel</a> and we'll send examples.</p>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="about">
+  <div class="why-grid">
+    <div>
+      <div class="section-label">Why Elias Crew Co.</div>
+      <h2 class="section-title">We Treat Every Home Like It's Our Own</h2>
+      <p class="section-sub">We're a family-owned business based right here in McKinney. When you hire us, you get Daniel and a dedicated crew — not a random subcontractor.</p>
+      <br><br>
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text">
+            <h4>Detailed Written Estimates</h4>
+            <p>No vague quotes. Every estimate is itemized so you know exactly what you're paying for — no surprises.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text">
+            <h4>We Show Up When We Say We Will</h4>
+            <p>Reliability is rare in this industry. We respect your time and your home from day one.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text">
+            <h4>Clean Job Sites Every Day</h4>
+            <p>We clean up at the end of every workday and leave your property spotless when the job is done.</p>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">✓</div>
+          <div class="why-text">
+            <h4>1-Year Workmanship Warranty</h4>
+            <p>Every job is backed by a full year warranty on labor. We stand behind our work completely.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-cta-box">
+      <h3>Ready to Get Started?</h3>
+      <p>Call or text Daniel directly for a free same-day estimate. We respond fast and we show up.</p>
+      <a href="tel:2148361418" class="phone-big">214-836-1418</a>
+      <a href="#contact" class="btn-primary" style="display:inline-flex; justify-content:center;">Request Free Estimate</a>
+      <br><br>
+      <p style="font-size:0.8rem; color:rgba(255,255,255,0.4);">📧 eliascrew@gmail.com<br>📍 McKinney, TX — Serving all DFW</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-header">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple. Transparent. Done Right.</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Free Estimate</h4>
+      <p>Call, text, or fill out the form. Daniel will respond same day and schedule a site visit.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Detailed Proposal</h4>
+      <p>You get a fully itemized written proposal — every material and cost listed. No guesswork.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>We Get to Work</h4>
+      <p>We show up on time, work clean, and keep you updated throughout the project.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>You Love It</h4>
+      <p>Final walkthrough, your approval, and a 1-year warranty on all workmanship.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <h2>Get Your Free Estimate Today</h2>
+      <p>Fill out the form and Daniel will call you back within the hour. We serve McKinney and all surrounding DFW communities.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div class="contact-detail-text">
+          <a href="tel:2148361418">214-836-1418</a>
+          <small>Call or text anytime</small>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📧</div>
+        <div class="contact-detail-text">
+          <a href="mailto:eliascrew@gmail.com">eliascrew@gmail.com</a>
+          <small>We respond same day</small>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text">
+          <span>1216 N Central Expy Suite 200</span>
+          <small>McKinney, TX 75070</small>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div class="contact-detail-text">
+          <span>Mon – Sat: 7:00 AM – 6:00 PM</span>
+          <small>Free estimates available same week</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>Request a Free Estimate</h3>
+      <p>We'll call you back within the hour.</p>
+      <form id="estimateForm" name="estimate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="estimate-request">
+        <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="first_name" placeholder="Daniel" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="(214) 555-0000" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="you@email.com">
+        </div>
+        <div class="form-group">
+          <label>Service Needed</label>
+          <select name="service" required>
+            <option value="">Select a service...</option>
+            <option>Fence Installation or Repair</option>
+            <option>Deck Building</option>
+            <option>Pergola or Covered Patio</option>
+            <option>Kitchen Remodeling</option>
+            <option>Bathroom Remodeling</option>
+            <option>Painting</option>
+            <option>Flooring</option>
+            <option>Drywall & Taping</option>
+            <option>General Repairs</option>
+            <option>Multiple Services</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>When Do You Want to Start?</label>
+          <select name="timeline">
+            <option>As soon as possible</option>
+            <option>Within 1 month</option>
+            <option>1 to 3 months</option>
+            <option>Just getting estimates</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell Us About Your Project</label>
+          <textarea name="message" placeholder="Describe your project, size, materials, any specific details..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">📋 Request My Free Estimate</button>
+        <p class="form-note">🔒 Your info is private. We'll never sell or share it.</p>
+      </form>
+      <div class="success-msg" id="successMsg">
+        🎉 Thanks! Daniel will call you back within the hour.<br>
+        <strong>214-836-1418</strong> — feel free to call or text directly too!
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<div class="areas">
+  <div class="areas-inner">
+    <h3>📍 Proudly Serving All of DFW</h3>
+    <div class="areas-list">
+      <span class="area-tag">McKinney</span>
+      <span class="area-tag">Frisco</span>
+      <span class="area-tag">Allen</span>
+      <span class="area-tag">Plano</span>
+      <span class="area-tag">Prosper</span>
+      <span class="area-tag">Celina</span>
+      <span class="area-tag">Anna</span>
+      <span class="area-tag">Wylie</span>
+      <span class="area-tag">Murphy</span>
+      <span class="area-tag">Sachse</span>
+      <span class="area-tag">Garland</span>
+      <span class="area-tag">Richardson</span>
+      <span class="area-tag">The Colony</span>
+      <span class="area-tag">Little Elm</span>
+      <span class="area-tag">Lewisville</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Elias Crew <span>Co.</span></div>
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:2148361418">214-836-1418</a>
+    <a href="mailto:eliascrew@gmail.com">eliascrew@gmail.com</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61590515456952" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" role="img"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.063a10.025 10.025 0 0 1-3.04.066z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/eliascrew1/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" role="img"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.332.014 7.052.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.281.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
+    <a href="https://youtube.com/@eliascrew1" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24" role="img"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+  <p>© 2026 Elias Crew Co. — McKinney, TX 75070 — Licensed & Insured — Serving all of DFW</p>
+</footer>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:2148361418" class="float-call">📞 Call Now — Free Estimate</a>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-arrow lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-arrow lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+  function handleSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    }).then(function () {
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }).catch(function () {
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Gallery filtering
+  (function () {
+    var filters = document.querySelectorAll('.work-filter');
+    var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
+    filters.forEach(function (f) {
+      f.addEventListener('click', function () {
+        filters.forEach(function (x) { x.classList.remove('active'); });
+        f.classList.add('active');
+        var cat = f.dataset.cat;
+        shots.forEach(function (s) {
+          s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+
+    // Lightbox
+    var lb = document.getElementById('lightbox'),
+        lbImg = document.getElementById('lbImg'),
+        lbCap = document.getElementById('lbCap');
+    var idx = 0, current = [];
+    function vis() { return shots.filter(function (s) { return s.style.display !== 'none'; }); }
+    function render() {
+      var s = current[idx]; if (!s) return;
+      var img = s.querySelector('img');
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lbCap.textContent = s.querySelector('.shot-tag').textContent;
+    }
+    function open(i) { current = vis(); idx = i; render(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    function move(d) { idx = (idx + d + current.length) % current.length; render(); }
+    shots.forEach(function (s) { s.addEventListener('click', function () { open(vis().indexOf(s)); }); });
+    document.getElementById('lbClose').addEventListener('click', close);
+    document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); move(-1); });
+    document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); move(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') move(-1);
+      if (e.key === 'ArrowRight') move(1);
+    });
+  })();
+
+  // Animate elements on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .step, .why-item, .shot').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+<!-- Chatbot widget -->
+<script src="/chat-widget.js" defer></script>
+</body>
+</html>
