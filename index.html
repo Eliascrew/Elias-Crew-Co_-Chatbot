@@ -282,6 +282,73 @@
     border-radius: 100px;
   }
 
+  /* ── OUR WORK / GALLERY ── */
+  .work { background: var(--white); }
+  .work-header { text-align: center; margin-bottom: 48px; }
+  .work-header .section-sub { margin: 0 auto; }
+  .work-filters {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+    margin-bottom: 40px;
+  }
+  .work-filter {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    color: var(--green);
+    background: var(--white);
+    border: 1.5px solid rgba(26,82,38,0.2);
+    padding: 9px 20px; border-radius: 100px;
+    cursor: pointer; transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .work-filter:hover { border-color: var(--bright); }
+  .work-filter.active { background: var(--green); border-color: var(--green); color: var(--white); }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    max-width: 1100px; margin: 0 auto;
+  }
+  .shot {
+    position: relative; border-radius: 12px; overflow: hidden;
+    cursor: pointer; aspect-ratio: 4 / 3; background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .shot:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .shot:hover img { transform: scale(1.06); }
+  .shot::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(13,31,15,0.55));
+  }
+  .shot-tag {
+    position: absolute; left: 14px; bottom: 14px; z-index: 2;
+    font-size: 0.78rem; font-weight: 600; color: var(--white);
+    background: rgba(26,82,38,0.92);
+    padding: 5px 13px; border-radius: 100px;
+    letter-spacing: 0.02em;
+  }
+  .work-note {
+    text-align: center; color: var(--gray); font-size: 0.9rem;
+    margin-top: 36px; font-weight: 300;
+  }
+  .work-note a { color: var(--bright); font-weight: 600; text-decoration: none; }
+
+  /* lightbox */
+  .lb { position: fixed; inset: 0; z-index: 300; background: rgba(8,12,8,0.94);
+        display: none; align-items: center; justify-content: center; padding: 4vw; }
+  .lb.open { display: flex; }
+  .lb img { max-width: 92vw; max-height: 86vh; border-radius: 8px; box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+  .lb-btn { position: absolute; border: none; cursor: pointer; color: var(--white);
+            background: rgba(255,255,255,0.12); transition: background 0.2s; }
+  .lb-btn:hover { background: var(--bright); }
+  .lb-close { top: 20px; right: 24px; width: 46px; height: 46px; border-radius: 50%; font-size: 1.5rem; }
+  .lb-arrow { top: 50%; transform: translateY(-50%); width: 54px; height: 54px; border-radius: 50%; font-size: 1.7rem; }
+  .lb-prev { left: 18px; } .lb-next { right: 18px; }
+  .lb-cap { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center;
+            color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+
   /* ── WHY US ── */
   .why { background: var(--dark); }
   .why .section-title { color: var(--white); }
@@ -598,7 +665,7 @@
 
   /* ── FLOATING CALL ── */
   .float-call {
-    position: fixed; bottom: 28px; right: 28px; z-index: 200;
+    position: fixed; bottom: 28px; left: 28px; z-index: 200;
     display: flex; align-items: center; gap: 12px;
     background: var(--bright);
     color: var(--white);
@@ -632,6 +699,12 @@
     .steps::before { display: none; }
     nav { padding: 0 4vw; }
     .nav-logo { font-size: 1.1rem; }
+    .float-call { padding: 14px 18px; font-size: 0.9rem; bottom: 20px; left: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .shot:hover img { transform: none; }
   }
 </style>
 </head>
@@ -738,6 +811,32 @@
       <span class="service-price">Free Estimate</span>
     </div>
   </div>
+</section>
+
+<!-- OUR WORK / GALLERY -->
+<section class="work" id="work">
+  <div class="work-header">
+    <div class="section-label">Recent Projects</div>
+    <h2 class="section-title">Our Work</h2>
+    <p class="section-sub">Real projects built by our crew across McKinney and the DFW metroplex. Tap any photo to view it larger.</p>
+  </div>
+  <div class="work-filters" id="workFilters">
+    <button class="work-filter active" data-cat="all">All</button>
+    <button class="work-filter" data-cat="Fences">Fences</button>
+    <button class="work-filter" data-cat="Patios">Pergolas &amp; Patios</button>
+    <button class="work-filter" data-cat="Bathrooms">Bathrooms</button>
+    <button class="work-filter" data-cat="Flooring">Flooring</button>
+  </div>
+  <div class="gallery" id="gallery">
+    <figure class="shot" data-cat="Fences"><img loading="lazy" src="images/fence-privacy-dark-stain.jpg" alt="Dark-stained board-on-board privacy fence with gate in McKinney"><span class="shot-tag">Privacy Fence</span></figure>
+    <figure class="shot" data-cat="Fences"><img loading="lazy" src="images/fence-board-on-board.jpg" alt="Natural cedar board-on-board fence with cap rail"><span class="shot-tag">Cedar Fence</span></figure>
+    <figure class="shot" data-cat="Patios"><img loading="lazy" src="images/covered-patio-pergola.jpg" alt="Stained wood covered patio with vaulted ceiling and stone columns"><span class="shot-tag">Covered Patio</span></figure>
+    <figure class="shot" data-cat="Patios"><img loading="lazy" src="images/pergola-pavilion.jpg" alt="Freestanding wood pavilion pergola over a new concrete patio"><span class="shot-tag">Pergola</span></figure>
+    <figure class="shot" data-cat="Bathrooms"><img loading="lazy" src="images/bathroom-soaker-tub.jpg" alt="Modern bathroom remodel with freestanding soaker tub and matte black fixtures"><span class="shot-tag">Bath Remodel</span></figure>
+    <figure class="shot" data-cat="Bathrooms"><img loading="lazy" src="images/bathroom-walk-in-shower.jpg" alt="Frameless glass walk-in shower with hexagon floor tile and bench"><span class="shot-tag">Walk-In Shower</span></figure>
+    <figure class="shot" data-cat="Flooring"><img loading="lazy" src="images/flooring-wood-plank.jpg" alt="Wood-plank flooring installation in a hallway"><span class="shot-tag">Flooring</span></figure>
+  </div>
+  <p class="work-note">📸 New photos added after every project. Want to see work similar to yours? <a href="#contact">Ask Daniel</a> and we'll send examples.</p>
 </section>
 
 <!-- WHY US -->
@@ -859,28 +958,30 @@
     <div class="form-card">
       <h3>Request a Free Estimate</h3>
       <p>We'll call you back within the hour.</p>
-      <form id="estimateForm" onsubmit="handleSubmit(event)">
+      <form id="estimateForm" name="estimate-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="form-name" value="estimate-request">
+        <p style="display:none"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="Daniel" required>
+            <input type="text" name="first_name" placeholder="Daniel" required>
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Smith" required>
+            <input type="text" name="last_name" placeholder="Smith" required>
           </div>
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(214) 555-0000" required>
+          <input type="tel" name="phone" placeholder="(214) 555-0000" required>
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="you@email.com">
+          <input type="email" name="email" placeholder="you@email.com">
         </div>
         <div class="form-group">
           <label>Service Needed</label>
-          <select required>
+          <select name="service" required>
             <option value="">Select a service...</option>
             <option>Fence Installation or Repair</option>
             <option>Deck Building</option>
@@ -896,7 +997,7 @@
         </div>
         <div class="form-group">
           <label>When Do You Want to Start?</label>
-          <select>
+          <select name="timeline">
             <option>As soon as possible</option>
             <option>Within 1 month</option>
             <option>1 to 3 months</option>
@@ -905,7 +1006,7 @@
         </div>
         <div class="form-group">
           <label>Tell Us About Your Project</label>
-          <textarea placeholder="Describe your project, size, materials, any specific details..."></textarea>
+          <textarea name="message" placeholder="Describe your project, size, materials, any specific details..."></textarea>
         </div>
         <button type="submit" class="btn-submit">📋 Request My Free Estimate</button>
         <p class="form-note">🔒 Your info is private. We'll never sell or share it.</p>
@@ -948,6 +1049,7 @@
   <div class="footer-links">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
     <a href="tel:2148361418">214-836-1418</a>
@@ -970,11 +1072,31 @@
 <!-- FLOATING CALL BUTTON -->
 <a href="tel:2148361418" class="float-call">📞 Call Now — Free Estimate</a>
 
+<!-- LIGHTBOX -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo viewer">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-btn lb-arrow lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-arrow lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
 <script>
   function handleSubmit(e) {
     e.preventDefault();
-    document.getElementById('estimateForm').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
+    var form = e.target;
+    var data = new FormData(form);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    }).then(function () {
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }).catch(function () {
+      form.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    });
   }
 
   // Smooth scroll for anchor links
@@ -988,6 +1110,49 @@
     });
   });
 
+  // Gallery filtering
+  (function () {
+    var filters = document.querySelectorAll('.work-filter');
+    var shots = Array.prototype.slice.call(document.querySelectorAll('.shot'));
+    filters.forEach(function (f) {
+      f.addEventListener('click', function () {
+        filters.forEach(function (x) { x.classList.remove('active'); });
+        f.classList.add('active');
+        var cat = f.dataset.cat;
+        shots.forEach(function (s) {
+          s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
+        });
+      });
+    });
+
+    // Lightbox
+    var lb = document.getElementById('lightbox'),
+        lbImg = document.getElementById('lbImg'),
+        lbCap = document.getElementById('lbCap');
+    var idx = 0, current = [];
+    function vis() { return shots.filter(function (s) { return s.style.display !== 'none'; }); }
+    function render() {
+      var s = current[idx]; if (!s) return;
+      var img = s.querySelector('img');
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lbCap.textContent = s.querySelector('.shot-tag').textContent;
+    }
+    function open(i) { current = vis(); idx = i; render(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    function move(d) { idx = (idx + d + current.length) % current.length; render(); }
+    shots.forEach(function (s) { s.addEventListener('click', function () { open(vis().indexOf(s)); }); });
+    document.getElementById('lbClose').addEventListener('click', close);
+    document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); move(-1); });
+    document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); move(1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') move(-1);
+      if (e.key === 'ArrowRight') move(1);
+    });
+  })();
+
   // Animate elements on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -998,7 +1163,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.service-card, .step, .why-item').forEach(el => {
+  document.querySelectorAll('.service-card, .step, .why-item, .shot').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
