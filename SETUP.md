@@ -41,7 +41,7 @@ Daniel's Google Calendar** using his real availability.
 ## Setup
 
 ### 1. Add the files
-Drop them into the project/repo that deploys eliascrewco.netlify.app, keeping
+Drop them into the project/repo that deploys eliascrew.com, keeping
 the netlify/functions/... folder structure. Put chat-widget.js where your
 site files live so it serves at /chat-widget.js.
 
@@ -82,7 +82,7 @@ Netlify -> Site settings -> Environment variables:
 | TWILIO_AUTH_TOKEN | (add later) from Twilio |
 | TWILIO_FROM | (add later) your Twilio number, e.g. +14695551234 |
 | LEAD_PHONE | (add later) +12148361418 |
-| ALLOWED_ORIGIN | (recommended once tested) https://eliascrewco.netlify.app |
+| ALLOWED_ORIGIN | (recommended once tested) https://eliascrew.com |
 
 Optional tuning (sensible defaults built in):
 
@@ -143,7 +143,7 @@ leads, alert Daniel, and offer booking times as tappable quick replies.
    **Messenger** product. Connect Elias Crew Co.'s Facebook Page and generate a
    **Page access token**.
 2. Add the webhook. Callback URL:
-   `https://eliascrewco.netlify.app/.netlify/functions/messenger`
+   `https://eliascrew.com/.netlify/functions/messenger`
    Verify token: whatever you set as `FB_VERIFY_TOKEN` below.
    Subscribe the Page to the **messages** and **messaging_postbacks** fields.
 3. Add these environment variables in Netlify:
