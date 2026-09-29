@@ -77,7 +77,7 @@ Netlify -> Site settings -> Environment variables:
 | GOOGLE_PRIVATE_KEY | the JSON private_key (paste as-is; \n's are handled) |
 | GOOGLE_CALENDAR_ID | eliascrew@gmail.com |
 | RESEND_API_KEY | from Resend |
-| LEAD_EMAIL | eliascrew@gmail.com |
+| LEAD_EMAIL | daniel@eliascrew.com |
 | TWILIO_ACCOUNT_SID | (add later) from Twilio |
 | TWILIO_AUTH_TOKEN | (add later) from Twilio |
 | TWILIO_FROM | (add later) your Twilio number, e.g. +14695551234 |
