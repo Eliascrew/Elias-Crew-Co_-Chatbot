@@ -78,6 +78,7 @@ Netlify -> Site settings -> Environment variables:
 | GOOGLE_CALENDAR_ID | eliascrew@gmail.com |
 | RESEND_API_KEY | from Resend |
 | LEAD_EMAIL | daniel@eliascrew.com |
+| RESEND_FROM | `Elias Crew Co. <leads@eliascrew.com>` — must be on a domain verified at resend.com/domains. Without it, Resend's test sender is used, which can only email the Resend account owner's own address. |
 | TWILIO_ACCOUNT_SID | (add later) from Twilio |
 | TWILIO_AUTH_TOKEN | (add later) from Twilio |
 | TWILIO_FROM | (add later) your Twilio number, e.g. +14695551234 |
