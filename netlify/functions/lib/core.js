@@ -138,7 +138,7 @@ async function sendSMSTo(to, text) {
 async function sendEmailTo(to, subject, html) {
   const { RESEND_API_KEY } = process.env;
   if (!RESEND_API_KEY || !to) return false;
-  const res = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: "Bearer " + RESEND_API_KEY, "Content-Type": "application/json" }, body: JSON.stringify({ from: "Elias Crew Co. <onboarding@resend.dev>", to: [to], subject, html }) });
+  const res = await fetch("https://api.resend.com/emails", { method: "POST", headers: { Authorization: "Bearer " + RESEND_API_KEY, "Content-Type": "application/json" }, body: JSON.stringify({ from: process.env.RESEND_FROM || "Elias Crew Co. <onboarding@resend.dev>", to: [to], subject, html }) });
   if (!res.ok) { console.error("Resend error", res.status, await res.text()); return false; }
   return true;
 }
