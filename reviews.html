@@ -38,7 +38,7 @@
 </div></header>
 <div class="crumb"><div class="wrap"><a href="index.html">Home</a><span class="sep">›</span><a href="#">Services</a><span class="sep">›</span><span>Reviews</span></div></div>
 <section><div class="wrap">
-  <div class="rev-light"><div class="rev-l"><div class="stars">★★★★★</div><p>"8ft tall privacy fence, 125 linear feet — showed up on time, worked clean, and it looks fantastic. Fair price and no surprises."</p><div class="who">Tamara W.</div><div class="where">Colleyville, TX</div></div><div class="rev-l"><div class="stars">★★★★★</div><p>"Daniel and his crew did a cedar fence for us and we couldn't be happier. Professional from the quote to the cleanup."</p><div class="who">Al C.</div><div class="where">Richardson, TX</div></div><div class="rev-l"><div class="stars">★★★★★</div><p>"Complex custom kitchen remodel with a ton of details. They handled all of it and kept us updated the whole way."</p><div class="who">Esmeralda G.</div><div class="where">Dallas, TX</div></div><div class="rev-l"><div class="stars">★★★★★</div><p>"Cedar fence turned out beautiful and the crew was respectful of our property the whole time. Highly recommend."</p><div class="who">Al Cariaga</div><div class="where">Richardson, TX</div></div><div class="rev-l"><div class="stars">★★★★★</div><p>"Great communication from start to finish. The estimate was clear and the final bill matched it exactly."</p><div class="who">Tamara White</div><div class="where">Colleyville, TX</div></div><div class="rev-l"><div class="stars">★★★★★</div><p>"They took on a kitchen that two other contractors wouldn't touch. Craftsmanship and patience — we love it."</p><div class="who">Esmeralda G.</div><div class="where">Dallas, TX</div></div></div>
+  <div class="rev-light" id="reviews"></div>
   <div style="text-align:center;margin-top:44px;padding:34px;background:var(--cream);border-radius:16px">
     <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--dark);margin-bottom:8px">Worked with us? We'd love your review.</h3>
     <p style="color:var(--gray);margin-bottom:20px">A quick review helps other neighbors find us — and it means the world to a small family business.</p>
@@ -65,5 +65,21 @@
   <div class="foot-bottom"><span>© 2026 Elias Crew Co. — McKinney, TX 75070 · Licensed &amp; Insured</span><span>Serving all of DFW</span></div>
 </div></footer>
 <a class="fcall" href="tel:2148361418">📞 Call Now</a>
+<script src="reviews-data.js"></script>
+<script>
+(function(){
+  var box=document.getElementById('reviews'); if(!box) return;
+  var html=(window.REVIEWS||"").split("\n").map(function(line){
+    var t=line.trim(); if(!t || t.indexOf("//")===0) return "";
+    var p=line.split("|"); if(p.length<4) return "";
+    var name=(p[0]||"").trim(), loc=(p[1]||"").trim();
+    var n=parseInt((p[2]||"5").trim(),10); if(isNaN(n)||n<1)n=5; if(n>5)n=5;
+    var text=p.slice(3).join("|").trim();
+    var stars=""; for(var i=0;i<5;i++) stars+= i<n ? "★" : "☆";
+    return '<div class="rev-l"><div class="stars">'+stars+'</div><p>"'+text+'"</p><div class="who">'+name+'</div><div class="where">'+loc+'</div></div>';
+  }).join("");
+  box.innerHTML=html;
+})();
+</script>
 <script src="/chat-widget.js" defer></script>
 </body></html>
