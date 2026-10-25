@@ -32,6 +32,13 @@
 
 window.GALLERY = `
 
+Carpentry | carpentry-slat-wall-bench.jpg      | Slat Wall & Floating Bench
+Carpentry | carpentry-vaulted-beams.jpg        | Vaulted Ceiling Beams
+Carpentry | carpentry-x-accent-wall.jpg        | X-Pattern Accent Wall
+Carpentry | carpentry-geometric-wall.jpg       | Geometric Wood Accent Wall
+Carpentry | carpentry-paneled-wall-beams.jpg   | Paneled Wall & Beams
+Carpentry | carpentry-coffered-ceiling.jpg     | Coffered Ceiling & Built-Ins
+
 Patios    | patio-gable-sunburst.jpg           | Sunburst Gable Patio Cover
 Patios    | pergola-stone-column.jpg           | Stone-Column Pergola
 Patios    | pergola-garden-pavilion.jpg        | Garden Pavilion Pergola
