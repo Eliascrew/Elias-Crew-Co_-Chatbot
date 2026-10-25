@@ -38,7 +38,7 @@ Bathrooms | bathroom-tub-glass-shower.jpg      | Tub & Glass Shower
 Bathrooms | bathroom-marble-corner-shower.jpg  | Marble Corner Shower
 
 Patios    | patio-brick-gable-cover.jpg        | Brick Gable Patio Cover
-Patios    | patio-cedar-beam-cover.jpg         | Cedar-Beam Covered Patio
+   
 
 Fences    | fence-cedar-privacy-tall.jpg       | Cedar Privacy Fence
 Fences    | fence-cedar-steel-post.jpg         | Steel-Post Cedar Fence
