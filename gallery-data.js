@@ -32,6 +32,19 @@
 
 window.GALLERY = `
 
+Bathrooms | bathroom-green-marble-shower.jpg   | Green Marble Shower
+Bathrooms | bathroom-green-marble-niche.jpg    | Green Marble Shower Niche
+Bathrooms | bathroom-tub-glass-shower.jpg      | Tub & Glass Shower
+Bathrooms | bathroom-marble-corner-shower.jpg  | Marble Corner Shower
+
+Patios    | patio-brick-gable-cover.jpg        | Brick Gable Patio Cover
+Patios    | patio-cedar-beam-cover.jpg         | Cedar-Beam Covered Patio
+
+Fences    | fence-cedar-privacy-tall.jpg       | Cedar Privacy Fence
+Fences    | fence-cedar-steel-post.jpg         | Steel-Post Cedar Fence
+
+Flooring  | flooring-red-oak-living.jpg        | Red Oak Hardwood Floor
+
 Carpentry | carpentry-slat-wall-bench.jpg      | Slat Wall & Floating Bench
 Carpentry | carpentry-vaulted-beams.jpg        | Vaulted Ceiling Beams
 Carpentry | carpentry-x-accent-wall.jpg        | X-Pattern Accent Wall
