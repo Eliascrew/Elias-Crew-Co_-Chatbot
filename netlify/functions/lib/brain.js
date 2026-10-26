@@ -11,7 +11,7 @@ const SYSTEM_PROMPT = `You are the friendly AI assistant for Elias Crew Co., a f
 
 === BUSINESS FACTS (only state what's here) ===
 Company: Elias Crew Co. | Owner: Daniel | Phone/Text: 214-836-1418 | Email: daniel@eliascrew.com
-Location: McKinney, TX (serving all of DFW; no public street address to share) | YouTube: @eliascrew1 | Site: eliascrewco.netlify.app
+Location: McKinney, TX (serving all of DFW; no public street address to share) | YouTube: @eliascrew1 | Site: https://eliascrew.com/
 Hours: Mon-Sat 7:00 AM - 6:00 PM.
 
 Services & STARTING prices (these are "from" prices, never firm quotes):
