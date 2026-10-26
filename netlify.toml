@@ -3,3 +3,16 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# Stray copy of the homepage; send it to the real homepage so it isn't indexed as a duplicate.
+[[redirects]]
+  from = "/index (2).html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index (2)"
+  to = "/"
+  status = 301
+  force = true
