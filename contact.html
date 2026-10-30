@@ -23,7 +23,7 @@
   <ul class="menu" id="site-menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="#">Services <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
-      <div class="submenu"><a href="handyman.html">Handyman &amp; Repairs<small>Your whole to-do list, one crew</small></a><a href="fences.html">Fences &amp; Gates<small>Wood, cedar, metal &amp; privacy</small></a><a href="decks-patios.html">Decks, Pergolas &amp; Patios<small>Outdoor living spaces</small></a><a href="remodeling.html">Kitchen &amp; Bath Remodeling<small>Full renovations</small></a><a href="carpentry.html">Carpentry &amp; Built-Ins<small>Shelving, bars, closets &amp; rails</small></a><a href="painting-flooring.html">Painting &amp; Flooring<small>Interior &amp; exterior</small></a></div></li>
+      <div class="submenu"><a href="handyman.html">Handyman &amp; Repairs<small>Your whole to-do list, one crew</small></a><a href="fences.html">Fences &amp; Gates<small>Wood, cedar, metal &amp; privacy</small></a><a href="decks-patios.html">Decks, Pergolas &amp; Patios<small>Outdoor living spaces</small></a><a href="remodeling.html">Kitchen &amp; Bath Remodeling<small>Full renovations</small></a><a href="carpentry.html">Carpentry &amp; Built-Ins<small>Shelving, bars, closets &amp; rails</small></a><a href="painting-flooring.html">Painting &amp; Flooring<small>Interior &amp; exterior</small></a><a href="christmas-lights.html">Christmas Light Installation<small>Holiday lights, hung &amp; taken down</small></a></div></li>
     <li><a href="#">Service Areas <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
       <div class="submenu"><a href="contact.html">McKinney</a><a href="contact.html">Frisco</a><a href="contact.html">Allen</a><a href="contact.html">Plano</a><a href="contact.html">Prosper &amp; Celina</a></div></li>
     <li><a href="our-work.html">Our Work</a></li>
@@ -45,7 +45,7 @@
     <div class="row"><div class="ic">📞</div><div><b><a href="tel:2148361418">214-836-1418</a></b><span>Call or text anytime</span></div></div>
     <div class="row"><div class="ic">📧</div><div><b><a href="mailto:daniel@eliascrew.com">daniel@eliascrew.com</a></b><span>We respond same day</span></div></div>
     <div class="row"><div class="ic">🕐</div><div><b>Mon – Sat: 7:00 AM – 6:00 PM</b><span>Free estimates available same week</span></div></div>
-    <div class="row"><div class="ic">📍</div><div><b>Serving all of DFW</b><span>McKinney, Frisco, Allen, Plano, Prosper, Celina &amp; surrounding</span></div></div>
+    <div class="row"><div class="ic">📍</div><div><b>Serving all of DFW</b><span>McKinney, Allen, Frisco, Plano, Prosper, Celina, Anna, Melissa, Princeton, Wylie, Murphy, Sachse, Richardson, Garland, Rowlett, Lucas, Fairview, The Colony, Little Elm, Lewisville</span></div></div>
     <div style="margin-top:18px;padding:20px;background:var(--light);border-radius:12px;font-size:.92rem;color:#2b4a36">💬 Prefer to chat? Our assistant in the corner can answer questions and book a free consult any time.</div>
   </div>
   <div class="form-card">
@@ -55,7 +55,7 @@
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <div class="frow"><div class="fg"><label>First Name</label><input name="first_name" required></div><div class="fg"><label>Last Name</label><input name="last_name" required></div></div>
       <div class="frow"><div class="fg"><label>Phone</label><input name="phone" type="tel" required></div><div class="fg"><label>Email</label><input name="email" type="email"></div></div>
-      <div class="fg"><label>Service Needed</label><select name="service"><option value="">Select a service…</option><option>Fence Installation or Repair</option><option>Deck Building</option><option>Pergola or Covered Patio</option><option>Kitchen Remodeling</option><option>Bathroom Remodeling</option><option>Carpentry or Built-Ins</option><option>Painting</option><option>Flooring</option><option>Handyman / General Repairs</option><option>Multiple Services</option></select></div>
+      <div class="fg"><label>Service Needed</label><select name="service"><option value="">Select a service…</option><option>Fence Installation or Repair</option><option>Deck Building</option><option>Pergola or Covered Patio</option><option>Kitchen Remodeling</option><option>Bathroom Remodeling</option><option>Carpentry or Built-Ins</option><option>Painting</option><option>Flooring</option><option>Christmas Light Installation</option><option>Handyman / General Repairs</option><option>Multiple Services</option></select></div>
       <div class="fg"><label>When do you want to start?</label><select name="timeline"><option>As soon as possible</option><option>Within 1 month</option><option>1 to 3 months</option><option>Just getting estimates</option></select></div>
       <div class="fg"><label>Tell us about your project</label><textarea name="message" rows="4" placeholder="Size, materials, any details…"></textarea></div>
       <div class="form-err" id="form-err" role="alert" tabindex="-1">Sorry — your request didn't go through. Your details are still filled in, so please <button type="button" class="form-retry" onclick="document.getElementById('ef').requestSubmit()">try again</button>. If it keeps happening, call or text Daniel at <a href="tel:2148361418">214-836-1418</a>.</div>
@@ -85,8 +85,9 @@ function submitForm(e){e.preventDefault();var f=e.target,btn=f.querySelector('bu
 <footer><div class="wrap">
   <div class="foot-grid">
     <div class="foot-brand"><div class="brand"><span class="mark"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5M5 10v9h14v-9M9.5 19v-5h5v5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Elias Crew <span>Co.</span></div>
-      <p>Family-owned contractor serving McKinney and the DFW metroplex. Handyman, fences, decks, remodeling &amp; more — fully insured and backed by a 1-year workmanship warranty.</p></div>
-    <div><h5>Services</h5><ul><li><a href="handyman.html">Handyman &amp; Repairs</a></li><li><a href="fences.html">Fences &amp; Gates</a></li><li><a href="decks-patios.html">Decks, Pergolas &amp; Patios</a></li><li><a href="remodeling.html">Kitchen &amp; Bath Remodeling</a></li><li><a href="carpentry.html">Carpentry &amp; Built-Ins</a></li><li><a href="painting-flooring.html">Painting &amp; Flooring</a></li></ul></div>
+      <p>Family-owned contractor serving McKinney and the DFW metroplex. Handyman, fences, decks, remodeling &amp; more — fully insured and family-owned since 2005.</p>
+      <p style="margin-top:12px">Serving McKinney, Allen, Frisco, Plano, Prosper, Celina, Anna, Melissa, Princeton, Wylie, Murphy, Sachse, Richardson, Garland, Rowlett, Lucas, Fairview, The Colony, Little Elm, Lewisville.</p></div>
+    <div><h5>Services</h5><ul><li><a href="handyman.html">Handyman &amp; Repairs</a></li><li><a href="fences.html">Fences &amp; Gates</a></li><li><a href="decks-patios.html">Decks, Pergolas &amp; Patios</a></li><li><a href="remodeling.html">Kitchen &amp; Bath Remodeling</a></li><li><a href="carpentry.html">Carpentry &amp; Built-Ins</a></li><li><a href="painting-flooring.html">Painting &amp; Flooring</a></li><li><a href="christmas-lights.html">Christmas Light Installation</a></li></ul></div>
     <div><h5>Company</h5><ul><li><a href="our-work.html">Our Work</a></li><li><a href="about.html">About Us</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Service Areas</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="foot-contact"><h5>Get in touch</h5>
       <div><b>Call or text</b><a href="tel:2148361418">214-836-1418</a></div>

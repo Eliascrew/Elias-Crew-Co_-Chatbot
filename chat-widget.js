@@ -119,7 +119,7 @@
 
   const botAv = '<div class="av"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11.5 12 4l9 7.5M5 10v9h14v-9M9.5 19v-5h5v5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
   const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
-  const fmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>");
+  const fmt = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, (_, t) => "<b>" + t + "</b>").replace(/\n/g, "<br>");
   const scroll = () => requestAnimationFrame(() => (msgs.scrollTop = msgs.scrollHeight));
 
   function botSay(t) { const r = document.createElement("div"); r.className = "row bot"; r.innerHTML = botAv + '<div class="bubble">' + fmt(t) + "</div>"; msgs.appendChild(r); scroll(); }
