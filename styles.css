@@ -250,3 +250,7 @@ footer ul a:hover{color:var(--bright)}
 .rev-l .stars{color:var(--gold);font-size:1.05rem}
 .rev-l p{margin:12px 0 16px;color:#333;line-height:1.6}
 .rev-l .who{font-weight:700;color:var(--dark)}.rev-l .where{color:var(--gray);font-size:.86rem}
+/* City pages: service links in checklists; footer service-area city links */
+.checks a{color:var(--green);font-weight:600}
+.foot-brand p a{color:#cfe0d4;text-decoration:underline;text-underline-offset:2px}
+.foot-brand p a:hover{color:var(--bright)}
