@@ -260,3 +260,12 @@ footer ul a:hover{color:var(--bright)}
 .checks a{color:var(--green);font-weight:600}
 .foot-brand p a{color:#cfe0d4;text-decoration:underline;text-underline-offset:2px}
 .foot-brand p a:hover{color:var(--bright)}
+.proj-list{display:grid;gap:28px;margin-top:34px}
+.proj-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 26px 28px}
+.proj-card h3{font-size:1.3rem;color:var(--dark)}
+.proj-card h3 a{color:var(--green)}
+.proj-card>p{margin-top:8px;color:#2b2b2b;max-width:760px}
+.proj-card .photo-strip{margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(220px,340px))}
+.proj-quote{margin:16px 0 0;padding:14px 18px;border-left:4px solid var(--gold);background:var(--cream);border-radius:10px;max-width:760px}
+.proj-quote p{margin-top:4px;font-style:italic}
+.proj-quote cite{display:block;margin-top:6px;font-style:normal;font-weight:600;font-size:.92rem;color:var(--green)}
