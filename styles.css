@@ -198,6 +198,7 @@ footer{background:#0b1a0e;color:#9fb0a4;padding:60px 0 28px}
 .foot-brand p{font-size:.92rem;line-height:1.6}
 footer h5{color:#fff;font-family:'DM Sans';font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+footer ul li{font-size:.92rem}
 footer ul a{font-size:.92rem;color:#9fb0a4;transition:color .15s}
 footer ul a:hover{color:var(--bright)}
 .foot-contact div{margin-bottom:11px;font-size:.92rem}
