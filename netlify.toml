@@ -1,5 +1,7 @@
 [build]
   functions = "netlify/functions"
+  # Bakes reviews and gallery captions into the HTML so non-JS crawlers (AI search, etc.) can read them.
+  command = "node scripts/prerender-static.mjs"
 
 [build.environment]
   NODE_VERSION = "20"
