@@ -53,6 +53,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.12;font-weight:80
 .burger{display:none;background:none;border:none;cursor:pointer;width:40px;height:40px}
 .burger svg{width:26px;height:26px;stroke:var(--dark);stroke-width:2}
 @media(max-width:940px){.menu,.nav-right .nav-cta{display:none}.burger{display:grid;place-items:center}}
+/* narrower desktops: tighten menu spacing so every item stays on one line */
+@media(min-width:941px) and (max-width:1279px){.menu{gap:0}.menu > li > a{padding:10px 9px;white-space:nowrap}.nav .wrap{gap:12px}}
+@media(min-width:941px) and (max-width:1099px){.menu > li > a{padding:10px 5px;font-size:.85rem}.brand{font-size:1.2rem;white-space:nowrap}.nav-cta{padding:10px 12px;white-space:nowrap}}
+@media(min-width:941px) and (max-width:1023px){.menu > li > a{padding:10px 4px;font-size:.82rem}.brand{font-size:1.1rem;gap:8px}.nav-right{gap:0}.nav-cta{font-size:.85rem}}
 .burger:focus-visible,.menu a:focus-visible{outline:2px solid var(--bright);outline-offset:2px}
 /* mobile menu panel (opened by nav.js) */
 @media(max-width:940px){
@@ -155,6 +159,8 @@ h2.sec-title{font-size:clamp(1.9rem,3.6vw,2.7rem);color:var(--dark);font-weight:
 .fin .box{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:40px 44px;display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .fin h3{font-size:1.7rem;color:var(--dark)}
 .fin p{color:var(--gray);margin-top:8px;max-width:52ch}
+.fin-note{margin-top:28px;max-width:760px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:12px;padding:16px 22px;color:var(--ink);font-size:1rem}
+.fin-note a{color:var(--green);font-weight:700;text-decoration:underline;white-space:nowrap}
 
 /* ---- reviews ---- */
 .reviews{background:var(--dark);color:#fff}
