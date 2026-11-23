@@ -5,6 +5,9 @@
 // Override base path with window.ELIAS_CHAT_ENDPOINT before this script loads.
 
 (function () {
+  // The script is included both in each page and by a site-wide snippet; only start once.
+  if (window.__eliasChatLoaded || document.getElementById("elias-chat-widget")) return;
+  window.__eliasChatLoaded = true;
   const ENDPOINT = window.ELIAS_CHAT_ENDPOINT || "/.netlify/functions/chat";
   const BASE = ENDPOINT.replace(/\/[^/]*$/, "");
   const AVAIL = window.ELIAS_AVAIL_ENDPOINT || BASE + "/availability";
